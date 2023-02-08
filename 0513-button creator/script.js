@@ -40,9 +40,24 @@ function handleChange(event) {
     const value = event.target.value;
     
     handleStyle[name](value);
+    saveValues(name, value);
     showCss();
 }
 
 function showCss() {
     cssText.innerHTML = '<span>' + btn.style.cssText.split('; ').join(';</span><span>');
 }
+
+function saveValues(name, value) { // salvando no cliente (armazenamento local) as informações
+    localStorage[name] = value;
+}
+
+function setValues() {
+    const properties = Object.keys(localStorage);
+    properties.forEach(property => {
+        handleStyle[property](localStorage[property]); // atualiza botão
+        controles.elements[property].value = localStorage[property]; // atualiza controles (values do form)
+    })
+    showCss();
+}
+setValues()
