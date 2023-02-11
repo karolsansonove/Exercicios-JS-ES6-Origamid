@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercício API 1</title>
+</head>
+<body>
+    <h1>Buscador de Endereço</h1>
+    <form name="searchCep" id="searchCep">
+        <label for="search">Busca:</label>
+        <input type="text" name="search" id="search" placeholder="Pesquise pelo CEP">
+        <button data-button>Buscar</button>
+    </form>
+    <section data-address>
+        <p>CEP: <span data-address="cep"></span></p>
+        <p>Rua: <span data-address="logradouro"></span></p>
+        <p>Complemento: <span data-address="complemento"></span></p>
+        <p>Bairro: <span data-address="bairro"></span></p>
+        <p>Cidade: <span data-address="localidade"></span></p>
+        <p>Estado: <span data-address="uf"></span></p>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
